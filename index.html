@@ -16,12 +16,25 @@
             </div>
         </div>
         <button class="addButt">Add Book to Library</button>
-
-        <div class="form">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-        </div>
+            <form action="" class="form">
+                <label for="title">Title of the book:
+                    <input type="text" id="title" name="title">
+                </label>
+                <label for="author">Author of the book:
+                    <input type="text" id="author" name="author">
+                </label>
+                <label for="pages">Number of pages:
+                    <input type="text">
+                </label>
+                <button type="submit" id="submit">submit</button>
+                <button type="reset" id="reset">reset</button>
+                <label for="">Read
+                    <input type="radio" id="read" name="read">
+                </label>
+                <label for="">Not read
+                    <input type="radio" id="not-read" name="read">
+                </label>
+            </form>
         <button class="toggle">Toggle Form</button>                   
     </body>
 </html>

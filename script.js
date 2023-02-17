@@ -21,8 +21,7 @@ let createDiv = function() {
     }
 }
 
-const butt = document.querySelector(".addButt")
-butt.addEventListener("click", () => {
+document.querySelector(".addButt").addEventListener("click", () => {
         let title = prompt("Title:")
         let author = prompt("Author:")
         let pages = prompt("Pages:")
@@ -34,8 +33,7 @@ butt.addEventListener("click", () => {
         paragraphs[2].textContent = myLibrary[myLibrary.length - 1].pages
 })
 
-const toggleButt = document.querySelector(".toggle")
-toggleButt.addEventListener("click", () => {
+document.querySelector(".toggle").addEventListener("click", () => {
     let formDiv = document.querySelector(".form")
     if(formDiv.style.display === "grid") {
         formDiv.style.display = "none"
@@ -44,6 +42,19 @@ toggleButt.addEventListener("click", () => {
     }
 })
 
+document.querySelector("#submit").addEventListener("click", (e) => { 
+    e.preventDefault();  
+    let inputs = document.querySelectorAll(".form label input")
+    let title = inputs[0].value
+    let author = inputs[1].value
+    let pages = inputs[2].value
+    myLibrary.push(new Book(title, author, pages))
+    createDiv()
+    let paragraphs = document.querySelectorAll(".container .book-card:last-child p")
+    paragraphs[0].textContent = myLibrary[myLibrary.length - 1].title
+    paragraphs[1].textContent = myLibrary[myLibrary.length - 1].author
+    paragraphs[2].textContent = myLibrary[myLibrary.length - 1].pages
+})
 
 
 
