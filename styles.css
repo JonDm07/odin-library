@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    margin: 0px;
 }
 
 .container {
@@ -9,6 +10,9 @@ body {
     grid-auto-rows: minmax(200px, 250px);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 300px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
 
 }
 
@@ -40,8 +44,13 @@ body {
     content: "Read: ";
 }
 
+.book-card-button {
+    height: 20px;
+    width: fit-content
+}
+
 .form {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     grid-auto-flow: row;
     width: 350px;
