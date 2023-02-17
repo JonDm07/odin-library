@@ -49,6 +49,14 @@ body {
     width: fit-content
 }
 
+.book-card-button:nth-of-type(odd)::before {
+    content: "Read";
+}
+
+.book-card-button:nth-of-type(even)::before {
+    content: "Delete";
+}
+
 .form {
     display: none;
     grid-template-columns: 1fr;

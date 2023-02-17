@@ -29,11 +29,7 @@ let createDiv = function() {
         button.classList.add("book-card-button")
         div.appendChild(button)
     }
-    let buttons = document.querySelectorAll(".book-card-button")
 
-    buttons[0].textContent = "Read"
-    buttons[1].textContent = "Delete"
-    
 }
 
 document.querySelector(".addNewBook").addEventListener("click", () => {
@@ -55,6 +51,8 @@ document.querySelector("#submit").addEventListener("click", (e) => {
     let div = document.querySelector(".book-card:last-of-type")
     div.setAttribute("data-num", numOfCards)
 
+    let deleteButton = document.querySelector(".book-card:last-of-type .book-card-button:last-of-type")
+    deleteButton.setAttribute("data-num", numOfCards)
     
     let paragraphs = document.querySelectorAll(".container .book-card:last-child p")
     let inputs = document.querySelectorAll(".form label input")
