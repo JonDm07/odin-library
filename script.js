@@ -98,7 +98,6 @@ document.querySelector("#submit").addEventListener("click", (e) => {
                         delButtons[j].setAttribute("data-num", j)
 
                     }
-
                 }
             }
         }
