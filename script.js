@@ -37,15 +37,22 @@ let createDiv = function() {
 }
 
 document.querySelector(".addNewBook").addEventListener("click", () => {
-    let form = document.querySelector(".form")
     let formDiv = document.querySelector(".form-div")
 
-    if(form.style.display === "grid") {
-        form.style.display = "none"
+    if(formDiv.style.display === "grid") {
         formDiv.style.display = "none"        
     } else {
-        form.style.display = "grid"
         formDiv.style.display = "grid"
+    }
+
+    document.querySelector(".form-close").onclick = () => {
+        let formDiv = document.querySelector(".form-div")
+
+        if(formDiv.style.display === "grid") {
+            formDiv.style.display = "none"        
+        } else {
+            formDiv.style.display = "grid"
+        }
     }
 })
 
@@ -102,7 +109,6 @@ document.querySelector("#submit").addEventListener("click", (e) => {
             }
         }
     })
-
 })
 
 
