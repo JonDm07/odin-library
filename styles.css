@@ -1,5 +1,16 @@
 :root {
     --box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.36);
+    --primary-color: #FDFFFC;
+    --secondary-color: #235789;
+    --tertiary-color: #241715;
+}
+@font-face {
+    font-family: golos;
+    src: url(fonts/GolosText-VariableFont_wght.ttf);
+}
+
+* {
+    font-family: "golos";
 }
 
 html,
@@ -11,7 +22,7 @@ body {
 .header {
     width: 100%;
     height: 100px;
-    background-color: #235789;
+    background-color: var(--secondary-color);
     display: flex;
     justify-content: flex-end;
 }
@@ -41,11 +52,19 @@ button {
 }
 
 .book-card {
-    background-color: #FDFFFC;
+    background-color:var(--primary-color);
     border-radius: 10px;
     padding: 20px;
     border: solid black 1px;
     box-shadow: var(--box-shadow);
+}
+
+.book-card p {
+    color: #87255B;
+}
+
+.book-card p::before {
+    color: black;
 }
 
 .book-card p:nth-child(1)::before {
@@ -64,9 +83,24 @@ button {
     content: "Read: ";
 }
 
-.book-card-button {
-    height: 20px;
-    width: fit-content
+.read,
+.delete {
+    box-shadow: var(--box-shadow);
+    border: none;
+    border-radius: 15px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    height: max-content;
+    width: 60px;
+    padding: 4px 0px;
+}
+
+.read {
+    margin-right: 5px;
+}
+
+.delete {
+
 }
 
 .book-card-button:nth-of-type(odd)::before {
@@ -79,7 +113,7 @@ button {
 
 .form-div {
     border: solid black 1px;
-    background-color: white;
+    background-color: var(--primary-color);
     display: none;
     width: 250px;
     height: 250px;
@@ -96,16 +130,20 @@ button {
 
 .form-close {
     grid-column: -2 / -1;
-    width: 20px;
-    height: 20px;
-    padding: 0px;
+    width: 30px;
+    height: 30px;
     justify-self: end;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.36);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
 }
 
 .form {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-rows: repeat(3, 1fr) repeat(2, 0.5fr);
     grid-auto-flow: row;
 }
 
@@ -123,13 +161,28 @@ button {
 
 .form > label:nth-of-type(4) {
     grid-row: 4 / 5;
-    align-self: end;
+    align-self: center;
 }
 
 .form > label:nth-of-type(5) {
     grid-row: 5 / 6;
     grid-column: 1 / 4;
-    align-self: start;
+    align-self: center;
+}
+
+#submit,
+#reset {
+    justify-self: center;
+    border-radius: 5px;
+    padding: 8px 4px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#submit:hover,
+#reset:hover {
+    background-color: #241715;
 }
 
 #submit {
@@ -158,5 +211,6 @@ input[type="radio"] {
 }
 
 button:hover {
-    background-color: red;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color)
 }

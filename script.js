@@ -131,12 +131,14 @@ document.querySelector("#submit").addEventListener("click", (e) => {
                         myLibrary[i].read = "No"
                         if (cards.indexOf(cards[i] === readPara.indexOf(readPara[i]))) {
                             readPara[i].textContent = "No"
+                            readPara[i].style.color = "#DD1C1A"
                         }
                     } else {
                         myLibrary[i].read = "Yes"
                         cards[i].setAttribute("data-read", "Yes")
                         if (cards.indexOf(cards[i] === readPara.indexOf(readPara[i]))) {
                             readPara[i].textContent = "Yes"
+                            readPara[i].style.color = "#2C5530"
                         }}
                 }
             }
