@@ -94,6 +94,12 @@ document.querySelector("#submit").addEventListener("click", (e) => {
     paragraphs[2].textContent = myLibrary[myLibrary.length - 1].pages
     paragraphs[3].textContent = myLibrary[myLibrary.length - 1].read
 
+    if (paragraphs[3].textContent === "Yes") {
+        paragraphs[3].style.color = "#2C5530"
+    } else {
+        paragraphs[3].style.color = "#DD1C1A"
+    }
+
     getDeleteButtons();
 
     deleteButtons.forEach(button => {
