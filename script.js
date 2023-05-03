@@ -1,12 +1,22 @@
 let myLibrary = []
 let deleteButtons;
 
-function Book(title, author, pages, read, indexOfCard) {
+/* function Book(title, author, pages, read, indexOfCard) {
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.read = read,
     this.indexOfCard = indexOfCard
+} */
+
+class Book {
+    constructor(title, author, pages, read, indexOfCard) {
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read,
+        this.indexOfCard = indexOfCard
+    }
 }
 
 function getDeleteButtons() {
